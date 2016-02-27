@@ -5,6 +5,9 @@ using System.IO;
 
 public class CircleBehavior : MonoBehaviour
 {
+	public SpriteRenderer outline;
+	float outlineSize = 2f;
+
     SpriteRenderer SR;
     List<string> texts = new List<string>();
     GameObject text;
@@ -37,6 +40,7 @@ public class CircleBehavior : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && delay <= 0)
         {
 			SetColor();
+			outlineSize = 3f;
             delay = maxdelay;
 
 			//Add text
@@ -45,6 +49,11 @@ public class CircleBehavior : MonoBehaviour
 			GameObject t = Instantiate(text, mousePos, Quaternion.identity) as GameObject;
             t.GetComponent<TextMesh>().text = texts[Random.Range(0, texts.Count - 1)];
         }
+		outlineSize -= 2f * Time.deltaTime;
+		Color outlineColor = SR.color;
+		outlineColor.a = 0.2f;
+		outline.color = outlineColor;
+		outline.transform.localScale = Vector3.Lerp(outline.transform.localScale, new Vector3(outlineSize, outlineSize, outlineSize), Time.deltaTime * 20);
     }
 
 	void SetColor() {
