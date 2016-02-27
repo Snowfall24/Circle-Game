@@ -44,7 +44,7 @@ public class CircleBehavior : MonoBehaviour
     {
         delay -= Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0) && delay <= 0)
+        if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(1)) && delay <= 0)
         {
 			clickSound.Play();
 
@@ -59,7 +59,7 @@ public class CircleBehavior : MonoBehaviour
 			Instantiate(particles, mousePos, Quaternion.Euler(0, 180, 180));
             t.GetComponent<TextMesh>().text = texts[Random.Range(0, texts.Count - 1)];
         }
-		if (Input.GetMouseButton(0)) {
+		if (Input.GetMouseButton(0) || Input.GetMouseButton(1)) {
 			size = 1.8f;
 		} else {
 			size = 2f;
