@@ -15,6 +15,8 @@ public class CircleBehavior : MonoBehaviour
     List<string> texts = new List<string>();
     GameObject text;
 
+	Color color;
+
     float delay = 0;
     float maxdelay = 0.1f;
 
@@ -38,13 +40,12 @@ public class CircleBehavior : MonoBehaviour
     {
         delay -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && delay <= 0)
+        if (Input.GetMouseButtonDown(0) && delay <= 0)
         {
 			clickSound.Play();
 
 			SetColor();
 			outlineSize = 3f;
-			size = 1.5f;
             delay = maxdelay;
 
 			//Add text
@@ -53,12 +54,20 @@ public class CircleBehavior : MonoBehaviour
 			GameObject t = Instantiate(text, mousePos, Quaternion.identity) as GameObject;
             t.GetComponent<TextMesh>().text = texts[Random.Range(0, texts.Count - 1)];
         }
+		if (Input.GetMouseButton(0)) {
+			size = 1.8f;
+		} else {
+			size = 2f;
+		}
+
+		SR.transform.localScale = Vector3.Lerp(SR.transform.localScale, new Vector3(size, size, 1f), Time.deltaTime * 10);
+		SR.color = Color.Lerp(SR.color, color, Time.deltaTime * 10f);
 
 		Outline();
     }
 
 	void SetColor() {
-		SR.color = Color.HSVToRGB(Random.Range(0f, 1f), 1f, 0.9f);
+		color = Color.HSVToRGB(Random.Range(0f, 1f), 1f, 0.9f);
 	}
 
 	void Outline() {
