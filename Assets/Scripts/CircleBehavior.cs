@@ -55,6 +55,8 @@ public class CircleBehavior : MonoBehaviour {
 			Instantiate(particles, mousePos, Quaternion.Euler(0, 180, 180));
 			t.GetComponent<TextMesh>().text = texts[Random.Range(0, texts.Length - 1)];
 
+
+
 			//Debug.Log("Text created at: " + mousePos.x + " " + mousePos.y + " " + mousePos.z);
 		}
 		if (Input.GetMouseButton(0) || Input.GetMouseButton(1)) {
