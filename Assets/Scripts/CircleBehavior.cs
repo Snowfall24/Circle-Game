@@ -44,7 +44,7 @@ public class CircleBehavior : MonoBehaviour
     {
         delay -= Time.deltaTime;
 
-        if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(1)) && delay <= 0)
+        if ((Input.GetMouseButtonDown(0) && delay <= 0) || (Input.GetMouseButton(1) && delay <= -0.1f))
         {
 			clickSound.Play();
 
