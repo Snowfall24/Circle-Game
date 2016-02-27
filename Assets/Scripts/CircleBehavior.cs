@@ -18,7 +18,7 @@ public class CircleBehavior : MonoBehaviour
 
 	Color color;
 
-	Color color;
+
 
     float delay = 0;
     float maxdelay = 0.1f;
