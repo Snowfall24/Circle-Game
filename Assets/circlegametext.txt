@@ -64,14 +64,12 @@ syncing-Megabits of macrodata
 +3
 +4
 +5
-1 ÷ 0
+1 / 0
 ERROR
 Error 404, page not found
 AMAZING!!!
 DIVIDE BY ZERO ERROR
 :D
-+1 
-+2 
 +++++++++++
 2 TERABYTES
 food.blend
@@ -88,35 +86,3 @@ Up-Down-Up-Down-Down-Up
 Cheatz
 NOCLIP
 ?????
-
-MADE WITH UNITY 2D!
-12345678910!!!!!
-+1000 points!
-+100000000 points!
-+10293759305874.7 POINTS!
-+10 XP!
-YOU WIN!
-WOW!
-SKILLZ!
-SKATEBOARDS!
-HOVER_Boardz!
-Perfection!
-@#$%@##$!@!
-Yes
-Ha!
-Enemy ELIMINATED! + 10XP
-ENEMY DESTROYED! + 10XP
-kylersmith7
-Snowfall24
-OK
-GOOD 
-PERFECT
-YEAH
-Bacon
-Click!
-L0l
-+-1
-ENDLESSSS AWESOME
-COLORZ
-SPACEX
-
