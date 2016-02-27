@@ -14,6 +14,9 @@ public class CircleBehavior : MonoBehaviour
     SpriteRenderer SR;
     List<string> texts = new List<string>();
     GameObject text;
+	GameObject particles;
+
+	Color color;
 
 	Color color;
 
@@ -31,6 +34,7 @@ public class CircleBehavior : MonoBehaviour
         }
 
         text = Resources.Load("Text") as GameObject;
+		particles = Resources.Load("Particles") as GameObject;
 
 		SetColor();
     }
@@ -50,8 +54,9 @@ public class CircleBehavior : MonoBehaviour
 
 			//Add text
 			Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			mousePos.z = 0;
+			mousePos.z = -1;
 			GameObject t = Instantiate(text, mousePos, Quaternion.identity) as GameObject;
+			Instantiate(particles, mousePos, Quaternion.Euler(0, 180, 180));
             t.GetComponent<TextMesh>().text = texts[Random.Range(0, texts.Count - 1)];
         }
 		if (Input.GetMouseButton(0)) {
