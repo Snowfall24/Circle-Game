@@ -38,12 +38,16 @@ public class CircleBehavior : MonoBehaviour
         {
 			SetColor();
             delay = maxdelay;
-            GameObject t = Instantiate(text) as GameObject;
+
+			//Add text
+			Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			mousePos.z = 0;
+			GameObject t = Instantiate(text, mousePos, Quaternion.identity) as GameObject;
             t.GetComponent<TextMesh>().text = texts[Random.Range(0, texts.Count - 1)];
         }
     }
 
 	void SetColor() {
-		SR.color = Color.HSVToRGB(Random.Range(0f, 1f), 1, 1);
+		SR.color = Color.HSVToRGB(Random.Range(0f, 1f), 1f, 0.9f);
 	}
 }
