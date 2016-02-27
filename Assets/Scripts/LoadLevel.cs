@@ -3,23 +3,14 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class LoadLevel : MonoBehaviour {
-    
-
-    public void LoadScene()
-    {
-        SceneManager.LoadScene("CircleScene");
-    }
-
-
-
-
-	// Use this for initialization
-	void Start () {
-	
+	public void LoadScene() {
+		SceneManager.LoadScene("CircleScene");
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
-	
+	void Update() {
+		if (Input.GetKey(KeyCode.Escape)) {
+			Application.Quit();
+		}
 	}
 }

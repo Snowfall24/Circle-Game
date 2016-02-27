@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -69,6 +70,10 @@ public class CircleBehavior : MonoBehaviour
 		SR.color = Color.Lerp(SR.color, color, Time.deltaTime * 10f);
 
 		Outline();
+
+		if (Input.GetKey(KeyCode.Escape)) {
+			SceneManager.LoadScene(0);
+		}
     }
 
 	void SetColor() {
