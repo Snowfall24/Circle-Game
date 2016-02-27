@@ -9,11 +9,9 @@ public class CircleBehavior : MonoBehaviour
     List<string> texts = new List<string>();
     GameObject text;
 
-
-
-
     float delay = 0;
     float maxdelay = 0.1f;
+
     // Use this for initialization
     void Start()
     {
@@ -27,6 +25,8 @@ public class CircleBehavior : MonoBehaviour
         Debug.Log(texts.ToString());
 
         text = Resources.Load("Text") as GameObject;
+
+		SetColor();
     }
 
     // Update is called once per frame
@@ -36,10 +36,14 @@ public class CircleBehavior : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && delay <= 0)
         {
-            SR.color = Color.HSVToRGB(Random.Range(0f, 1f), 1, 1);
+			SetColor();
             delay = maxdelay;
             GameObject t = Instantiate(text) as GameObject;
             t.GetComponent<TextMesh>().text = texts[Random.Range(0, texts.Count - 1)];
         }
     }
+
+	void SetColor() {
+		SR.color = Color.HSVToRGB(Random.Range(0f, 1f), 1, 1);
+	}
 }
